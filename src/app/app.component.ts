@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-root',
+  selector: 'dh-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dev-helper';
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      "angular",
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/angular.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      "csharp",
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/csharp.svg')
+    );
+  }
 }

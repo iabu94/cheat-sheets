@@ -1,0 +1,13 @@
+<div>
+  <dh-header (menuToggled)="toggle()"></dh-header>
+
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" [opened]="opened">
+      <dh-menu-item [menu]="menu"></dh-menu-item>
+    </mat-sidenav>
+
+    <mat-sidenav-content [class.margin-left]="opened">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
