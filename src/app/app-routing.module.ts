@@ -32,9 +32,12 @@ const routes: Routes = [
         path: 'nextjs',
         loadChildren: () => import('./nextjs/nextjs.module').then(m => m.NextjsModule)
       },
+      {
+        path: 'react',
+        loadChildren: () => import('./react/react.module').then(m => m.ReactModule)
+      },
     ]
-  },
-
+  }
 ];
 
 @NgModule({

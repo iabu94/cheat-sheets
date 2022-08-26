@@ -44,6 +44,12 @@ export class LayoutComponent {
       link: '/nextjs',
       color: '#ff7f0e'
     },
+    {
+      title: 'React',
+      svgIcon: 'react',
+      link: '/react',
+      color: '#ff7f0e'
+    },
     // {
     //   title: 'C#',
     //   svgIcon: 'csharp',

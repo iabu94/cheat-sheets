@@ -10,7 +10,7 @@ import { registerIcons } from './_helpers';
 })
 export class AppComponent {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    const icons = ['angular', 'csharp', 'mssql', 'nextjs', 'netcore'];
+    const icons = ['angular', 'csharp', 'mssql', 'nextjs', 'netcore', 'react'];
     registerIcons(this.matIconRegistry, this.domSanitizer, icons);
   }
 }
