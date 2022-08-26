@@ -18,9 +18,23 @@ const routes: Routes = [
       },
       {
         path: 'csharp',
-        loadChildren: () => import('./csharp/csharp.module').then(m => m.CsharpModule) }
+        loadChildren: () => import('./csharp/csharp.module').then(m => m.CsharpModule)
+      },
+      {
+        path: 'netcore',
+        loadChildren: () => import('./netcore/netcore.module').then(m => m.NetcoreModule)
+      },
+      {
+        path: 'mssql',
+        loadChildren: () => import('./mssql/mssql.module').then(m => m.MssqlModule)
+      },
+      {
+        path: 'nextjs',
+        loadChildren: () => import('./nextjs/nextjs.module').then(m => m.NextjsModule)
+      },
     ]
-  }
+  },
+
 ];
 
 @NgModule({

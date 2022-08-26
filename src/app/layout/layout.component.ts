@@ -21,9 +21,27 @@ export class LayoutComponent {
       color: '#ff7f0e'
     },
     {
-      title: 'c#',
+      title: '.Net Core',
+      svgIcon: 'netcore',
+      link: '/netcore',
+      color: '#ff7f0e'
+    },
+    {
+      title: 'C#',
       svgIcon: 'csharp',
       link: '/csharp',
+      color: '#ff7f0e'
+    },
+    {
+      title: 'MSSQL',
+      svgIcon: 'mssql',
+      link: '/mssql',
+      color: '#ff7f0e'
+    },
+    {
+      title: 'Next.js',
+      svgIcon: 'nextjs',
+      link: '/nextjs',
       color: '#ff7f0e'
     },
     // {
