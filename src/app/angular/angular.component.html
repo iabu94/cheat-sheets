@@ -1,1 +1,31 @@
-<p>angular works!</p>
+<h2>Angular Cheat Sheet</h2>
+
+<h3>CLI Commands</h3>
+
+<form class="example-form" [formGroup]="formGroup">
+  <!-- Type -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Type</mat-label>
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="type"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.key">
+        {{option.displayName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- Name -->
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" autocomplete="off">
+  </mat-form-field>
+
+  <!-- Skip Test -->
+  <mat-checkbox color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
+
+</form>
+
+<code>
+  {{getCode()}}
+</code>
