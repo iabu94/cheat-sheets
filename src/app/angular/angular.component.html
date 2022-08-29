@@ -24,8 +24,14 @@
   <!-- Skip Test -->
   <mat-checkbox color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
 
+  <!-- Lazy Loading Feature Modules -->
+  <mat-checkbox *ngIf="f['type'].value === 'module'" color="primary" formControlName="lazyLoading">Lazy Loading</mat-checkbox>
+
 </form>
 
-<code>
-  {{getCode()}}
-</code>
+<div class="code">
+  <code> {{getCode()}} </code>
+  <button [cdkCopyToClipboard]="copyToClipBoard(getCode())" mat-icon-button color="primary" class="content-copy-btn">
+    <mat-icon>content_copy</mat-icon>
+  </button>
+</div>

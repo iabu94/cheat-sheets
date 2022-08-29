@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable, startWith } from 'rxjs';
 
 interface Type {
@@ -41,11 +42,12 @@ export class AngularComponent implements OnInit {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.formGroup = this.fb.group({
       name: [''],
       type: ['module'],
-      skipTests: [true]
+      skipTests: [true],
+      lazyLoading: [false]
     });
   }
 
@@ -73,6 +75,11 @@ export class AngularComponent implements OnInit {
     const name = this.f['name'].value;
     code += name ? ` ${name}` : '';
     code += this.f['skipTests'].value ? ' --skip-tests' : '';
+    code += this.f['lazyLoading'].value ? ` --route ${name} --module app.module` : '';
+    return code;
+  }
+
+  copyToClipBoard(code: string) {
     return code;
   }
 }

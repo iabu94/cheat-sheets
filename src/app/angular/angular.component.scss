@@ -11,3 +11,19 @@ code {
 mat-form-field {
   margin: 5px;
 }
+
+.code {
+  display: flex;
+}
+
+.content-copy-btn {
+  border: none;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(128, 128, 126);
+  }
+}
+
+mat-checkbox {
+  margin-left: 10px;
+}
