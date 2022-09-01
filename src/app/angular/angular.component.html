@@ -22,7 +22,7 @@
   </mat-form-field>
 
   <!-- Skip Test -->
-  <mat-checkbox color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
+  <mat-checkbox *ngIf="f['type'].value !== 'module'" color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
 
   <!-- Lazy Loading Feature Modules -->
   <mat-checkbox *ngIf="f['type'].value === 'module'" color="primary" formControlName="lazyLoading">Lazy Loading</mat-checkbox>
