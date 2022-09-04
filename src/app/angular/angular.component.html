@@ -6,19 +6,19 @@
   <!-- Type -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Type</mat-label>
-    <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="type"
-      [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.key">
+    <!-- <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="type"
+      > -->
+    <mat-select formControlName="type">
+      <mat-option *ngFor="let option of types" [value]="option.key">
         {{option.displayName}}
       </mat-option>
-    </mat-autocomplete>
+    </mat-select>
   </mat-form-field>
 
   <!-- Name -->
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input type="text" matInput formControlName="name" autocomplete="off">
+    <input type="text" #name matInput formControlName="name" autocomplete="off" (click)="name.select()">
   </mat-form-field>
 
   <!-- Skip Test -->

@@ -44,7 +44,7 @@ export class AngularComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.formGroup = this.fb.group({
-      name: [''],
+      name: ['test'],
       type: ['module'],
       skipTests: [true],
       lazyLoading: [false]
