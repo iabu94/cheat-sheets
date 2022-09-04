@@ -16,9 +16,13 @@ export class AppComponent {
     const icons = ['angular', 'csharp', 'mssql', 'nextjs', 'netcore', 'react'];
     registerIcons(this.matIconRegistry, this.domSanitizer, icons);
 
-    let visits: { hits: number } = { hits: 0 };
+    this.logVisit();
+  }
+
+  private logVisit() {
+    let visits: { hits: number; } = { hits: 0 };
     const ref = doc(this.firestore, 'cheatsheetvisits', 'cheatsheetvisitdocid');
-    const sub = (docData(ref) as Observable<{hits: number}>).subscribe(
+    const sub = (docData(ref) as Observable<{ hits: number; }>).subscribe(
       data => {
         visits.hits = data.hits + 1;
         updateDoc(ref, visits).then(() => console.log('updated'));
