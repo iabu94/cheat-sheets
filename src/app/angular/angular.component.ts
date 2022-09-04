@@ -74,12 +74,25 @@ export class AngularComponent implements OnInit {
     code += type ? ` ${type}` : '';
     const name = this.f['name'].value;
     code += name ? ` ${name}` : '';
-    code += this.f['skipTests'].value ? ' --skip-tests' : '';
+    code += !this.is('module') && this.f['skipTests'].value ? ' --skip-tests' : '';
     code += this.f['lazyLoading'].value ? ` --route ${name} --module app.module` : '';
     return code;
   }
 
+  is(value: 'module' | 'component' | 'pipe' | 'service') {
+    return this.f['type'].value === value;
+  }
+
   copyToClipBoard(code: string) {
     return code;
+  }
+
+  copied() {
+    this.snackBar.open('Copied to clipboard', '', {
+      duration: 1000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: 'snack-bar'
+    })
   }
 }

@@ -31,7 +31,7 @@
 
 <div class="code">
   <code> {{getCode()}} </code>
-  <button [cdkCopyToClipboard]="copyToClipBoard(getCode())" mat-icon-button color="primary" class="content-copy-btn">
+  <button [cdkCopyToClipboard]="copyToClipBoard(getCode())" (cdkCopyToClipboardCopied)="copied()" mat-icon-button color="primary" class="content-copy-btn">
     <mat-icon>content_copy</mat-icon>
   </button>
 </div>
