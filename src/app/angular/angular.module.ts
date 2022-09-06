@@ -9,6 +9,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { SharedModule } from "../shared/shared.module";
 import { AngularRoutingModule } from './angular-routing.module';
 import { AngularComponent } from './angular.component';
 
@@ -27,7 +28,9 @@ import { AngularComponent } from './angular.component';
     MatCheckboxModule,
     ClipboardModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
+    SharedModule
   ]
 })
 export class AngularModule { }

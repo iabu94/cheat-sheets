@@ -6,11 +6,9 @@
   <!-- Type -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Type</mat-label>
-    <!-- <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="type"
-      > -->
     <mat-select formControlName="type">
       <mat-option *ngFor="let option of types" [value]="option.key">
-        {{option.displayName}}
+        {{option.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -18,14 +16,20 @@
   <!-- Name -->
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input type="text" #name matInput formControlName="name" autocomplete="off" (click)="name.select()">
+    <input type="text" matInput formControlName="name" autocomplete="off" dhSelect>
+  </mat-form-field>
+
+  <!-- Module Name -->
+  <mat-form-field *ngIf="is('c') || is('d')">
+    <mat-label>Module Name</mat-label>
+    <input type="text" matInput formControlName="moduleName" autocomplete="off" dhSelect>
   </mat-form-field>
 
   <!-- Skip Test -->
-  <mat-checkbox *ngIf="f['type'].value !== 'module'" color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
+  <mat-checkbox *ngIf="!is('m')" color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
 
   <!-- Lazy Loading Feature Modules -->
-  <mat-checkbox *ngIf="f['type'].value === 'module'" color="primary" formControlName="lazyLoading">Lazy Loading</mat-checkbox>
+  <mat-checkbox *ngIf="is('m')" color="primary" formControlName="lazyLoading">Lazy Loading</mat-checkbox>
 
 </form>
 
