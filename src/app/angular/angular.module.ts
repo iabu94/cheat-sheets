@@ -12,10 +12,14 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { SharedModule } from "../shared/shared.module";
 import { AngularRoutingModule } from './angular-routing.module';
 import { AngularComponent } from './angular.component';
+import { CliCommandsComponent } from './cli-commands/cli-commands.component';
+import { DeploymentComponent } from './deployment/deployment.component';
 
 @NgModule({
   declarations: [
-    AngularComponent
+    AngularComponent,
+    CliCommandsComponent,
+    DeploymentComponent
   ],
   imports: [
     CommonModule,

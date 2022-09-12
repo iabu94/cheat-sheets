@@ -16,9 +16,24 @@ export class LayoutComponent {
   menu: Menu = [
     {
       title: 'Angular',
-      svgIcon: 'angular',
+      icon: 'angular',
       link: '/angular',
-      color: '#ff7f0e'
+      color: 'red',
+      expanded: true,
+      subMenu: [
+        {
+          title: 'CLI Commands',
+          icon: 'terminal',
+          link: '/angular/cli-commands',
+          color: 'red'
+        },
+        {
+          title: 'Deployment',
+          icon: 'rocket_launch',
+          link: '/angular/deployment',
+          color: 'red'
+        }
+      ]
     },
     {
       title: '.Net Core',

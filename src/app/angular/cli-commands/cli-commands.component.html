@@ -1,0 +1,39 @@
+<h3>CLI Commands</h3>
+
+<form class="example-form" [formGroup]="formGroup">
+  <!-- Type -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Type</mat-label>
+    <mat-select formControlName="type">
+      <mat-option *ngFor="let option of types" [value]="option.key">
+        {{option.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Name -->
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" autocomplete="off" dhSelect>
+  </mat-form-field>
+
+  <!-- Module Name -->
+  <mat-form-field *ngIf="is('c') || is('d')">
+    <mat-label>Module Name</mat-label>
+    <input type="text" matInput formControlName="moduleName" autocomplete="off" dhSelect>
+  </mat-form-field>
+
+  <!-- Skip Test -->
+  <mat-checkbox *ngIf="!is('m')" color="primary" formControlName="skipTests">Skip Tests</mat-checkbox>
+
+  <!-- Lazy Loading Feature Modules -->
+  <mat-checkbox *ngIf="is('m')" color="primary" formControlName="lazyLoading">Lazy Loading</mat-checkbox>
+
+</form>
+
+<div class="code">
+  <code> {{getCode()}} </code>
+  <button [cdkCopyToClipboard]="copyToClipBoard(getCode())" (cdkCopyToClipboardCopied)="copied()" mat-icon-button color="primary" class="content-copy-btn">
+    <mat-icon>content_copy</mat-icon>
+  </button>
+</div>

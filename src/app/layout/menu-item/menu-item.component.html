@@ -2,12 +2,8 @@
   <ng-container *ngFor="let item of menu">
     <!-- If the item doesn't have children show it as list item-->
     <ng-container *ngIf="!item.subMenu">
-      <mat-list-item
-        *ngIf="item.title"
-        [routerLink]="item.link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
+      <mat-list-item *ngIf="item.title" [routerLink]="item.link" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon *ngIf="item.icon" [style.color]="item.color" mat-list-icon>
           {{ item.icon }}
         </mat-icon>
@@ -18,13 +14,14 @@
 
     <!-- If the item has subMenu show it as accordion-->
     <ng-container *ngIf="item.subMenu && item.subMenu.length > 0">
-      <mat-expansion-panel [expanded]="item.expanded">
+      <mat-expansion-panel [expanded]="true">
         <mat-expansion-panel-header>
           <mat-panel-title class="d-flex align-items-center">
             <ng-container *ngIf="item.icon">
-            <mat-icon [svgIcon]="item.icon" [style.color]="item.color" mat-list-icon>
-              <!-- {{ item.icon }} -->
-            </mat-icon></ng-container>
+              <mat-icon [svgIcon]="item.icon" [style.color]="item.color" mat-list-icon>
+                <!-- {{ item.icon }} -->
+              </mat-icon>
+            </ng-container>
             <span mat-line class="list-item">{{ item.title }}</span>
           </mat-panel-title>
         </mat-expansion-panel-header>
