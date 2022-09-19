@@ -1,1 +1,13 @@
-<p>deployment works!</p>
+<h3>Deployments</h3>
+
+<form class="example-form" [formGroup]="formGroup">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Type</mat-label>
+    <mat-select formControlName="platform">
+      <mat-option *ngFor="let platform of platforms" [value]="platform.value">
+        {{platform.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
